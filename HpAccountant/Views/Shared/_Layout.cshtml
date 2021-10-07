@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Transportion</title>
+    <title>Hp Accountant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,10 +23,49 @@
     <link rel="stylesheet" href="~/css/animate.css">
     <link rel="stylesheet" href="~/css/slick.css">
     <link rel="stylesheet" href="~/css/slicknav.css">
+    <link href="~/Content/ClientSlider.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href="~/css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+        .header-area .main-header-area .main-menu ul li .submenu li a {
+            padding: 8px 9px;
+            position: inherit;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+            display: block;
+            color: #000;
+        }
+
+        .owl-carousel .owl-nav div {
+            background: transparent;
+            height: 40px;
+            left: 0px;
+            position: absolute;
+            text-align: center;
+            top: 24%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            width: 40px;
+            background-color: transparent;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            left: 40px;
+            font-size: 12px;
+            line-height: 40px;
+            background: #FFFFFF;
+            left: -20px;
+            color: #107785 !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -46,7 +85,6 @@
                                 <div class="short_contact_list">
                                     <ul>
                                         <li><a href="#"> <i class="fa fa-envelope"></i> info@hpaccountant.com</a></li>
-                                        <li><a href="#"> <i class="fa fa-phone"></i> 1601-609 6780</a></li>
                                     </ul>
                                 </div>
 
@@ -64,7 +102,7 @@
                         <div class="row align-items-center">
                             <div class="col-12 d-block d-lg-none">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="@Url.Action("Index","Home")">
                                         <img src="~/img/HP ACCOUNTANT LOGO.png" alt="" style="width:40%">
 
                                     </a>
@@ -79,17 +117,13 @@
                                             <li>
                                                 <a href="#">Services <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="@Url.Action("LimitedCompany","Service")">Limited Company</a></li>
-                                                    <li><a href="@Url.Action("SoleTraders","Service")">Sole Traders</a></li>
-                                                    <li><a href="@Url.Action("VAT","Service")">VAT</a></li>
+                                                    <li><a href="@Url.Action("YearEndAccounts","Service")"> Year End Accounts</a></li>
+                                                    <li><a href="@Url.Action("Bookkeeping&VAT","Service")">Bookkeeping &amp; VAT</a></li>
                                                     <li><a href="@Url.Action("Payroll","Service")">Payroll</a></li>
-                                                    <li><a href="@Url.Action("Training","Service")">Training</a></li>
-                                                    <li><a href="@Url.Action("BusinessPlanning","Service")">Business Planning</a></li>
-
+                                                    <li><a href="@Url.Action("SelfAssessment","Service")">Self-Assessment</a></li>
+                                                    <li><a href="@Url.Action("ManagementAccounting","Service")">Management Accounting</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="@Url.Action("Index","Testimonials")">Testimonials</a></li>
-                                            <li><a href="@Url.Action("Index","Pricing")">Pricing</a></li>
 
                                             <li><a href="@Url.Action("Index","Contact")">Contact</a></li>
                                         </ul>
@@ -110,6 +144,45 @@
     <div class="">
         @RenderBody()
 
+        <!--<div class="contact_location">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="location_left">
+                            <div class="logo">
+                                <a href="@Url.Action("Index","Home")">
+                                    <img src="~/img/HP ACCOUNTANT LOGO.png" alt="" style="width:35%">
+                                </a>
+                            </div>-->
+                            @*<ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-youtube"></i> </a></li>
+                            </ul>*@
+                        <!--</div>
+                    </div>
+                    <div class="col-xl-3 col-md-3">
+                        <div class="single_location">
+                            <h3> <img src="~/img/icon/address.svg" alt=""> Location</h3>
+                            <p>
+                                600/D, Kings road, Green lane
+                                NewYork-2563
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3">
+                        <div class="single_location">
+                            <h3> <img src="~/img/icon/support.svg" alt=""> Location</h3>
+                            <p>
+                                +10 267 3563 4562 <br>
+                                support@logistico.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
         <footer class="footer">
             <div class="footer_top">
                 <div class="container">
@@ -216,7 +289,7 @@
     <script src="~/js/slick.min.js"></script>
 
 
-
+    <script src="~/Scripts/ClientSlider.js"></script>
     <!--contact js-->
     <script src="~/js/contact.js"></script>
     <script src="~/js/jquery.ajaxchimp.min.js"></script>

@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -132,6 +133,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ClientSlider.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\flaticon.css" />
@@ -252,6 +254,7 @@
     <Content Include="img\service\5.png" />
     <Content Include="img\service\6.png" />
     <Content Include="img\service\service_details.png" />
+    <Content Include="img\Software\Xero-Logo.png" />
     <Content Include="img\svg_icon\address.svg" />
     <Content Include="img\svg_icon\airplane.png" />
     <Content Include="img\svg_icon\bath.svg" />
@@ -385,6 +388,7 @@
     <Content Include="Logistico doc\fonts\fontawesome-webfont.woff" />
     <Content Include="Logistico doc\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\ClientSlider.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -447,6 +451,11 @@
     <Content Include="scss\_testmonial.scss" />
     <Content Include="scss\_transport.scss" />
     <Content Include="scss\_varriable.scss" />
+    <Content Include="Views\Service\YearEndAccounts.cshtml" />
+    <Content Include="Views\Service\Bookkeeping.cshtml" />
+    <Content Include="Views\Service\Payroll.cshtml" />
+    <Content Include="Views\Service\SelfAssessment.cshtml" />
+    <Content Include="Views\Service\ManagementAccounting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
