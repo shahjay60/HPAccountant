@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
@@ -129,6 +130,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="contact_process.php" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -159,11 +161,17 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\aboutus\Endyear.png" />
+    <Content Include="img\aboutus\manageaccounting.jpg" />
+    <Content Include="img\aboutus\payroll.jpg" />
+    <Content Include="img\aboutus\selfassessment.jpg" />
+    <Content Include="img\aboutus\VAT.jpg" />
     <Content Include="img\about\0ffcan.png" />
     <Content Include="img\about\about.png" />
     <Content Include="img\about\counter.png" />
     <Content Include="img\banner\accordion.png" />
     <Content Include="img\banner\banner.png" />
+    <Content Include="img\banner\banner1.jfif" />
     <Content Include="img\banner\bradcam.png" />
     <Content Include="img\banner\bradcam2.png" />
     <Content Include="img\banner\contact_bg.png" />
@@ -253,7 +261,24 @@
     <Content Include="img\service\4.png" />
     <Content Include="img\service\5.png" />
     <Content Include="img\service\6.png" />
+    <Content Include="img\service\businessplanning.jpg" />
+    <Content Include="img\service\payroll-1000x600.jpg" />
+    <Content Include="img\service\Scope-Management-Accounting.jpg" />
+    <Content Include="img\service\self-assessment.png" />
     <Content Include="img\service\service_details.png" />
+    <Content Include="img\service\VAT.jpg" />
+    <Content Include="img\service\YearEndAccountant.jpg" />
+    <Content Include="img\Software\brightpay.jfif" />
+    <Content Include="img\Software\colors-curl-logo-template_23-2147536125.jpg" />
+    <Content Include="img\Software\download.png" />
+    <Content Include="img\Software\Freeagent.jfif" />
+    <Content Include="img\Software\IRIS.png" />
+    <Content Include="img\Software\luxury-letter-e-logo-design_1017-8903.jpg" />
+    <Content Include="img\Software\payrolls.png" />
+    <Content Include="img\Software\QuickBooks.jfif" />
+    <Content Include="img\Software\Sage sotware.png" />
+    <Content Include="img\Software\Sage.png" />
+    <Content Include="img\Software\Taxfiler.png" />
     <Content Include="img\Software\Xero-Logo.png" />
     <Content Include="img\svg_icon\address.svg" />
     <Content Include="img\svg_icon\airplane.png" />
@@ -456,6 +481,7 @@
     <Content Include="Views\Service\Payroll.cshtml" />
     <Content Include="Views\Service\SelfAssessment.cshtml" />
     <Content Include="Views\Service\ManagementAccounting.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

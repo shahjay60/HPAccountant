@@ -89,7 +89,10 @@
                                 </div>
 
                                 <div class="book_btn d-none d-lg-block">
-                                    <a class="boxed-btn3-line" href="#">Get Free Quote</a>
+                                    <a  class="boxed-btn3-line" data-bs-toggle="modal" data-bs-target="#modalForm">
+                                        Get Free Quote
+                                    </a>
+
                                 </div>
                             </div>
                         </div>
@@ -118,7 +121,7 @@
                                                 <a href="#">Services <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="@Url.Action("YearEndAccounts","Service")"> Year End Accounts</a></li>
-                                                    <li><a href="@Url.Action("Bookkeeping&VAT","Service")">Bookkeeping &amp; VAT</a></li>
+                                                    <li><a href="@Url.Action("Bookkeeping","Service")">Bookkeeping &amp; VAT</a></li>
                                                     <li><a href="@Url.Action("Payroll","Service")">Payroll</a></li>
                                                     <li><a href="@Url.Action("SelfAssessment","Service")">Self-Assessment</a></li>
                                                     <li><a href="@Url.Action("ManagementAccounting","Service")">Management Accounting</a></li>
@@ -144,109 +147,82 @@
     <div class="">
         @RenderBody()
 
-        <!--<div class="contact_location">
+        <div class="Estimate_area overlay">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="location_left">
-                            <div class="logo">
-                                <a href="@Url.Action("Index","Home")">
-                                    <img src="~/img/HP ACCOUNTANT LOGO.png" alt="" style="width:35%">
-                                </a>
-                            </div>-->
-                            @*<ul>
-                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-youtube"></i> </a></li>
-                            </ul>*@
-                        <!--</div>
-                    </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="single_location">
-                            <h3> <img src="~/img/icon/address.svg" alt=""> Location</h3>
+                    <div class="col-xl-4 col-lg-4 col-md-5">
+                        <div class="Estimate_info">
+                            <h3>Get free Estimate</h3>
                             <p>
-                                600/D, Kings road, Green lane
-                                NewYork-2563
+                                Esteem spirit temper too say adieus who direct esteem. It look estee luckily or picture
+                                placing.
                             </p>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="single_location">
-                            <h3> <img src="~/img/icon/support.svg" alt=""> Location</h3>
-                            <p>
-                                +10 267 3563 4562 <br>
-                                support@logistico.com
-                            </p>
+                    <div class="col-xl-8 col-lg-8 col-md-7">
+                        <div class="form">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="input_field">
+                                        <input type="text" placeholder="Your name" id="txtName">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="input_field">
+                                        <input type="email" placeholder="Email" id="txtEmail">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="input_field">
+                                        <input type="text" placeholder="Contact number" id="txtContactno">
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="input_field">
+                                        <select class="wide" id="drpService">
+                                            <option data-display="Services Type">Services Type</option>
+                                            <option value="Year End Accounts">Year End Accounts</option>
+                                            <option value="Bookkeeping">Bookkeeping & VAT</option>
+                                            <option value="Payroll">Payroll</option>
+                                            <option value="Self-Assessment">Self-Assessment </option>
+                                            <option value="Management Accounting">Management Accounting</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12">
+                                    <div class="input_field">
+                                        <textarea placeholder="Message" id="txtMessage"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="input_field">
+                                        <button class="boxed-btn3-line" type="submit" id="btnSubmit">Send Enquiry</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div>
+    
         <footer class="footer">
-            <div class="footer_top">
+            <div class="contact_location">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Services
-                                </h3>
-                                <ul>
-                                    <li><a href="@Url.Action("LimitedCompany","Service")">Limited Company</a></li>
-                                    <li><a href="@Url.Action("SoleTraders","Service")">Sole Traders</a></li>
-                                    <li><a href="@Url.Action("VAT","Service")">VAT</a></li>
-                                    <li><a href="@Url.Action("Payroll","Service")">Payroll</a></li>
-                                    <li><a href="@Url.Action("Training","Service")">Training</a></li>
-                                    <li><a href="@Url.Action("BusinessPlanning","Service")">Business Planning</a></li>
+                    <h2 style="text-align:center;">Software on which we have grip</h2>
+                    <section class="customer-logos slider">
+                        <div class="slide"><img src="~/img/Software/download.png"></div>
+                        <div class="slide"><img src="~/img/Software/Freeagent.jfif"></div>
+                        <div class="slide"><img src="~/img/Software/QuickBooks.jfif"></div>
+                        <div class="slide"><img src="~/img/Software/brightpay.jfif"></div>
+                        <div class="slide"><img src="~/img/Software/Taxfiler.png"></div>
+                        <div class="slide"><img src="~/img/Software/Sage sotware.png"></div>
+                        <div class="slide"><img src="~/img/Software/IRIS.png"></div>
+                        <div class="slide"><img src="~/img/Software/payrolls.png"></div>
+                    </section>
 
-                                </ul>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-lg-2">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Company
-                                </h3>
-                                <ul>
-                                    <li><a href="@Url.Action("Index","AboutUS")">About</a></li>
-                                    <li><a href="@Url.Action("Index","Testimonials")"> Testimonials</a></li>
-                                    <li><a href="@Url.Action("Index","Pricing")">Pricing</a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Partners
-                                </h3>
-                                <ul>
-                                    <li><a href="#">Chemicals</a></li>
-                                    <li><a href="#">Automotive</a></li>
-                                    <li><a href="#"> Consumer Goods</a></li>
-                                    <li><a href="#">Life Science</a></li>
-                                    <li><a href="#">Foreign Trade</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Subscribe
-                                </h3>
-                                <form action="#" class="newsletter_form">
-                                    <input type="text" placeholder="Enter your mail">
-                                    <button type="submit">Subscribe</button>
-                                </form>
-                                <p class="newsletter_text">
-                                    Esteem spirit temper too say adieus who direct esteem esteems
-                                    luckily.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="copy-right_text">
@@ -265,8 +241,39 @@
                 </div>
             </div>
         </footer>
+    
+        <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Bootstrap 5 Modal Form</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe" />
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="modal-footer d-block">
+                                <p class="float-start">Not yet account <a href="#">Sign Up</a></p>
+                                <button type="submit" class="btn btn-warning float-end">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-   
+    
     <!-- JS here -->
     <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>

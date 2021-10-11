@@ -1365,12 +1365,12 @@ h3 {
 
 /* line 1, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
+    background-image: url(../img/banner/banner1.jfif);
 }
 
 /* line 4, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_slider.scss */
 .slider_bg_2 {
-  background-image: url(../img/banner/banner_2.png);
+    background-image: url(https://www.testenvironmentmanagement.com/wp-content/uploads/2018/09/Environments-2018-09-27_8-52-43.png);
 }
 
 /* line 7, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_slider.scss */
@@ -2636,7 +2636,6 @@ h3 {
 /* line 112, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_contact_action.scss */
 .chose_area .about_image:before {
   position: absolute;
-  background: #107785;
   right: -25px;
   bottom: -25px;
   content: '';
