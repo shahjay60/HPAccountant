@@ -124,9 +124,11 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\ThankyouController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Enquiry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -274,6 +276,7 @@
     <Content Include="img\Software\Freeagent.jfif" />
     <Content Include="img\Software\IRIS.png" />
     <Content Include="img\Software\luxury-letter-e-logo-design_1017-8903.jpg" />
+    <Content Include="img\Software\Payroll.jpeg" />
     <Content Include="img\Software\payrolls.png" />
     <Content Include="img\Software\QuickBooks.jfif" />
     <Content Include="img\Software\Sage sotware.png" />
@@ -482,10 +485,10 @@
     <Content Include="Views\Service\SelfAssessment.cshtml" />
     <Content Include="Views\Service\ManagementAccounting.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Thankyou\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\AboutUs\" />
   </ItemGroup>
   <ItemGroup>

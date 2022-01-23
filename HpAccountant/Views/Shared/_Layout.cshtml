@@ -65,7 +65,17 @@
             left: -20px;
             color: #107785 !important;
         }
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249,249,249);
+        }
     </style>
+   
 </head>
 <body>
     <header>
@@ -89,7 +99,7 @@
                                 </div>
 
                                 <div class="book_btn d-none d-lg-block">
-                                    <a  class="boxed-btn3-line" data-bs-toggle="modal" data-bs-target="#modalForm">
+                                    <a class="boxed-btn3-line" data-bs-toggle="modal" data-bs-target="#modalForm">
                                         Get Free Quote
                                     </a>
 
@@ -116,13 +126,13 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="@Url.Action("Index","Home")">home</a></li>
-                                            <li><a href="@Url.Action("Index","AboutUS")">About Us</a></li>
+                                            @*<li><a href="@Url.Action("Index","AboutUS")">About Us</a></li>*@
                                             <li>
                                                 <a href="#">Services <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="@Url.Action("YearEndAccounts","Service")"> Year End Accounts</a></li>
                                                     <li><a href="@Url.Action("Bookkeeping","Service")">Bookkeeping &amp; VAT</a></li>
-                                                    <li><a href="@Url.Action("Payroll","Service")">Payroll</a></li>
+                                                    <li><a href="@Url.Action("Payroll","Service")">Payroll & CIS</a></li>
                                                     <li><a href="@Url.Action("SelfAssessment","Service")">Self-Assessment</a></li>
                                                     <li><a href="@Url.Action("ManagementAccounting","Service")">Management Accounting</a></li>
                                                 </ul>
@@ -133,7 +143,7 @@
                                     </nav>
                                 </div>
                             </div>
-                           
+
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
@@ -145,6 +155,8 @@
         </div>
     </header>
     <div class="">
+        <img class="loader" src="url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249,249,249)" id="img" style="display:none" />
+
         @RenderBody()
 
         <div class="Estimate_area overlay">
@@ -198,7 +210,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <button class="boxed-btn3-line" type="submit" id="btnSubmit">Send Enquiry</button>
+                                        <button class="boxed-btn3-line" type="submit" id="btnSubmitEnquiry">Send Enquiry</button>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +219,7 @@
                 </div>
             </div>
         </div>
-    
+
         <footer class="footer">
             <div class="contact_location">
                 <div class="container">
@@ -220,7 +232,7 @@
                         <div class="slide"><img src="~/img/Software/Taxfiler.png"></div>
                         <div class="slide"><img src="~/img/Software/Sage sotware.png"></div>
                         <div class="slide"><img src="~/img/Software/IRIS.png"></div>
-                        <div class="slide"><img src="~/img/Software/payrolls.png"></div>
+                        <div class="slide"><img src="~/img/Software/Payroll.jpeg"></div>
                     </section>
 
                 </div>
@@ -241,7 +253,7 @@
                 </div>
             </div>
         </footer>
-    
+
         <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -273,7 +285,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- JS here -->
     <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
@@ -306,6 +318,75 @@
 
 
     <script src="~/js/main.js"></script>
+
+    <script>
+        $("#btnSubmitEnquiry").click(function () {
+        $('#img').show();
+            var mdata = {};
+            mdata.Name = $("#txtName").val();
+            mdata.EmailId = $("#txtEmail").val();
+            mdata.Message = $("#txtMessage").val();
+            mdata.Service = $('#drpService :selected').text();
+            mdata.Contact = $("#txtContactno").val();
+
+            $.ajax({
+                type: "POST",
+                url: "/Contact/SendEnquryEmail",
+                data: JSON.stringify(mdata),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#img').hide();
+                    if (result == "Ok") {
+                        window.location.href='@Url.Action("Index", "Thankyou")'
+                    }
+                    else {
+                        alert(result);
+                    }
+                }
+            });
+       
+    });
+    function validation() {
+        var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+
+        var phone = /[0-9 -()+]+$/;
+
+        var result = false;
+        if ($.trim($("#name").val()) != '') {
+            result = true;
+        }
+
+        if ($.trim($("#subject").val()) != '') {
+            result = true;
+        }
+        if ($.trim($("#message").val()) != '') {
+            result = true;
+        }
+
+        if ($.trim($("#EmailId").val()) != '') {
+            var email = $.trim($("#EmailId").val());
+            if (emailReg.test(email)) {
+                result = true;
+            }
+            else {
+                alert('Please enter a valid email address.');
+            }
+        }
+        if ($.trim($("#EmailId").val()) != '') {
+            var email = $.trim($("#EmailId").val());
+            if (emailReg.test(email)) {
+                result = true;
+            }
+            else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        return result;
+
+    }
+    </script>
 
 </body>
 </html>

@@ -8,11 +8,11 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-8">
-                    <div class="slider_text text-center justify-content-center">
+                    <div class="slider_text text-center justify-content-center" style="margin-top:35% !important">
                         <h3>
-                            Global Business  Service
+                            Accounting services for all businesses
                         </h3>
-                        <a class="boxed-btn3" href=".service_area">Our Services</a>
+                        <a class="boxed-btn3" href="@Url.Action("Bookkeeping","Service")">Our Services</a>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,10 @@
                             <img src="~/img/service/YearEndAccountant.jpg" alt="">
                         </div>
                         <div class="service_info">
-                            <h3><a href="service_details.html">Year End Accounts</a></h3>
+                            <h3><a href="@Url.Action("YearEndAccounts","Service")">Year End Accounts</a></h3>
                             <p>All UK based limited companies, charities, and indeed any branches of an overseas company must file a document called ‘Year End accounts’ with HMRC and Companies House at the end of every financial year.</p>
+                            <a class="boxed-btn3-line" href="@Url.Action("YearEndAccounts","Service")">View More</a>
+
                         </div>
                     </div>
                     <div class="single_service">
@@ -50,8 +52,10 @@
                             <img src="~/img/service/VAT.jpg" alt="">
                         </div>
                         <div class="service_info">
-                            <h3><a href="service_details.html">Bookkeeping & VAT</a></h3>
+                            <h3><a href="@Url.Action("Bookkeeping","Service")">Bookkeeping & VAT</a></h3>
                             <p>While being a very important aspect of accounting in a business, bookkeeping does not actually require an in-house accountant to exclusively handle it.</p>
+                            <a class="boxed-btn3-line" href="@Url.Action("Bookkeeping","Service")">View More</a>
+
                         </div>
                     </div>
                     <div class="single_service">
@@ -59,8 +63,10 @@
                             <img src="~/img/service/payroll-1000x600.jpg" alt="">
                         </div>
                         <div class="service_info">
-                            <h3><a href="service_details.html">Payroll</a></h3>
+                            <h3><a href="@Url.Action("Payroll","Service")">Payroll & CIS</a></h3>
                             <p>We provide payroll administrators with full knowledge of PAYE RTI, Auto-enrolment. We also respond to HMRC or government notices on your behalf, and make sure all information is in compliance with HMRC.</p>
+                            <a class="boxed-btn3-line" href="@Url.Action("Payroll","Service")">View More</a>
+
                         </div>
                     </div>
                     <div class="single_service">
@@ -68,8 +74,10 @@
                             <img src="~/img/service/self-assessment.png" alt="">
                         </div>
                         <div class="service_info">
-                            <h3><a href="service_details.html">Self-Assessment </a></h3>
+                            <h3><a href="@Url.Action("SelfAssessment","Service")">Self-Assessment </a></h3>
                             <p>Self-assessment tax return outsourcing services ensure that you get the support you need during peak times like in January. </p>
+                            <a class="boxed-btn3-line" href="@Url.Action("SelfAssessment","Service")">View More</a>
+
                         </div>
                     </div>
                     <div class="single_service">
@@ -77,9 +85,9 @@
                             <img src="~/img/service/Scope-Management-Accounting.jpg" alt="">
                         </div>
                         <div class="service_info">
-                            <h3><a href="service_details.html">Management Accounting</a></h3>
+                            <h3><a href="@Url.Action("ManagementAccounting","Service")">Management Accounting</a></h3>
                             <p>Our management accounts outsourcing service is a low-risk way to innovate your client’s financial processes while creating dynamic improvements in business performance and profitability. </p>
-
+                            <a class="boxed-btn3-line" href="@Url.Action("ManagementAccounting","Service")">View More</a>
                         </div>
                     </div>
                    

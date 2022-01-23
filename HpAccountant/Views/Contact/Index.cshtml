@@ -3,8 +3,20 @@
     ViewBag.Title = "Index";
 }
 
+<style>
+    .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249,249,249);
+    }
+</style>
 <!-- bradcam_area  -->
-<div class="bradcam_area bradcam_bg_1">
+<div class="bradcam_area" style="background-image: url(https://www.emeraldgrouppublishing.com/sites/default/files/2020-01/SER1.1.4.3%20-%20FW%20-%20Young%20woman%20typing%20on%20laptop%20sat%20at%20desk%20with%20mobile%20phone%20and%20plant.jpg) ">
+
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -19,42 +31,105 @@
 <!-- ================ contact section start ================= -->
 <section class="contact-section">
     <div class="container">
-
+        <img class="loader" src="url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249,249,249)" id="img" style="display:none" />
         <div class="row">
             <div class="col-12">
                 <h2 class="contact-title">Get in Touch</h2>
             </div>
             <div class="col-lg-12">
-                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
-                            </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" message"></textarea>
                         </div>
                     </div>
-                    <div class="form-group mt-3">
-                        <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                        </div>
                     </div>
-                </form>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="button button-contactForm boxed-btn" id="btnSend">Send</button>
+                </div>
             </div>
-            
+
         </div>
     </div>
 </section>
+<script src="~/js/vendor/jquery-1.12.4.min.js"></script>
 <!-- ================ contact section end ================= -->
+<script>
+
+    $("#btnSend").click(function () {
+        $('#img').show();
+        var res = validation();
+        if (res == true) {
+            var mdata = {};
+            mdata.Name = $("#name").val();
+            mdata.Subject = $("#subject").val();
+            mdata.EmailId = $("#email").val();
+            mdata.Message = $("#message").val();
+
+            $.ajax({
+                type: "POST",
+                url: "/Contact/SendEmail",
+                data: JSON.stringify(mdata),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#img').hide();
+                    if (result == "Ok") {
+                        window.location.href='@Url.Action("Index", "Thankyou")'
+                    }
+                    else {
+                        alert(result);
+                    }
+                }
+            });
+        }
+        else {
+            alert("Enter Valid data..!!");
+        }
+    });
+    function validation() {
+        var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+
+        var phone = /[0-9 -()+]+$/;
+
+        var result = false;
+        if ($.trim($("#name").val()) != '') {
+            result = true;
+        }
+
+        if ($.trim($("#subject").val()) != '') {
+            result = true;
+        }
+        if ($.trim($("#message").val()) != '') {
+            result = true;
+        }
+
+        if ($.trim($("#EmailId").val()) != '') {
+            var email = $.trim($("#EmailId").val());
+            if (emailReg.test(email)) {
+                result = true;
+            }
+            else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        return result;
+
+    }
+</script>
